@@ -1,6 +1,7 @@
 <svelte:head>
     <meta name="author" content="Stemax Consult Services">
     <meta name="description" content="We specialise in providing occupational and environmental health services to businesses, and we also run a outpatient day care clinic catering towards individuals.">
+    <meta property="og:image" content="/favicon.png" />
     <title>Stemax Healthcare Consultancy & Clinic</title>
 </svelte:head>
 <script>
