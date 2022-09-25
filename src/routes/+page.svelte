@@ -10,7 +10,8 @@
             image: "https://images.unsplash.com/photo-1612278247079-6a0af8ff2dee",
             title: "Vaccinations",
             services: 16,
-            description: "To help your body develop immunity from a disease. Most often ordered when travelling abroad."
+            description: "To help your body develop immunity from a disease. Most often ordered when travelling abroad.",
+            link: "/vaccination"
         },
         {
             image: "https://images.unsplash.com/photo-1542884748-2b87b36c6b90?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
@@ -46,11 +47,11 @@
     ]
 </script>
 
-<div class="bg-white">
+<div class="">
 	<div class="max-w-2xl lg:max-w-7xl mx-auto pt-6 px-4 sm:py-6 sm:px-6 lg:px-8">
 		<div class="relative rounded-lg overflow-hidden">
 			<div class="absolute inset-0">
-				<img src="/map.png" alt="" class="w-full h-full object-center object-cover">
+				<img src="map.png" alt="" class="w-full h-full object-center object-cover">
 			</div>
 			<div class="relative bg-gray-900 bg-opacity-75 py-16 px-6 sm:py-16 sm:px-12 lg:px-16">
 				<div class="relative max-w-3xl mx-auto flex flex-col items-center text-center">
@@ -71,7 +72,7 @@
 	</div>
 </div>
 
-<div class="bg-white">
+<div class="">
 	<div class="max-w-2xl mx-auto py-6 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <div class="mx-1 pb-5 border-b border-gray-200">
             <h3 class="text-lg leading-6 font-medium text-gray-900">120+ Healthcare Services Offered</h3>
@@ -88,7 +89,7 @@
                         <p class="text-base font-medium text-gray-900">{service.title}</p>
                     </div>
 					<div class="text-sm font-medium text-gray-900">
-                        <a target="_blank" href="/">
+                        <a href="{service.link}">
                             <span aria-hidden="true" class="absolute inset-0"></span>
                             <p class="text-sm italic text-emerald-800 ">{service.services.toString()} Services</p>
 							
@@ -103,7 +104,7 @@
 	</div>
 </div>
 
-<div class="bg-white">
+<div class="">
 	<div class="max-w-2xl lg:max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
         <div class="mx-1 pb-5 border-b border-gray-200">
             <h3 class="text-lg leading-6 font-medium text-gray-900">Notable Clients</h3>
@@ -135,7 +136,7 @@
 	</div>
 </div>
 
-<div class="bg-white">
+<div class="">
 	<div class="max-w-2xl lg:max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
         <div class="space-y-4 sm:grid sm:grid-cols-3 sm:items-start sm:gap-6 sm:space-y-0 pt-6">
             <div class="aspect-w-3 aspect-h-2 sm:aspect-w-1 sm:aspect-h-4">
