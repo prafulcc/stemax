@@ -88,12 +88,10 @@
 <div hidden={!shown} class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
 	<div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
 		<div class="fixed inset-0 bg-emerald-900 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
-		<!-- <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span> -->
-
-		<div class="relative inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+		<div class="relative inline-block align-top bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
 			<div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
 				<div class="sm:flex sm:items-start">
-					<div class="mt-3 px-3 sm:mt-0 sm:ml-4 sm:text-left">
+					<div class="mt-3 px-3 sm:mt-0 sm:text-left">
 						<h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">Book Hepatitis B Vaccination</h3>
 						<div class="mt-2">
 							<p class="text-sm text-gray-500 list-disc">
@@ -105,6 +103,77 @@
 							<p class="text-sm text-gray-500">
 								A link to book will be emailed to you and an SMS reminder will be sent 24 hours before your appointment.
 							</p>
+
+							<div class="relative my-6">
+								<div class="absolute inset-0 flex items-center" aria-hidden="true">
+									<div class="w-full border-t border-gray-300"></div>
+								</div>
+								<div class="relative flex justify-">
+									<span class="px-2 bg-white text-sm text-gray-500"></span>
+								</div>
+							</div>
+							
+
+							<div class="mt-3">
+								<div class="mt-1 relative rounded-md shadow-sm">
+									<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5 text-gray-400">
+											<path fill-rule="evenodd" d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" clip-rule="evenodd" />
+										</svg>
+									</div>
+									<input type="text" name="name" id="name" class="border py-3 focus:ring-emerald-500 focus:border-emerald-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md" placeholder="John Smith">
+								</div>
+							</div>
+
+							<div class="mt-3">
+								<div class="mt-1 relative rounded-md shadow-sm">
+									<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+										<svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+											<path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+											<path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+										</svg>
+									</div>
+									<input type="email" name="email" id="email" class="border py-3 focus:ring-emerald-500 focus:border-emerald-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md" placeholder="you@example.com">
+								</div>
+							</div>
+
+							<div class="mt-3 mb-3">
+								<div class="mt-1 relative rounded-md shadow-sm">
+									<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5 text-gray-400">
+											<path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd" />
+										</svg>
+									</div>
+									<input type="tel" name="phone-number" id="phone-number" class="border py-3 focus:ring-emerald-500 focus:border-emerald-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md" placeholder="0759268860">
+								</div>
+							</div>
+
+							
+							<div class="flex items-center justify-evenly my-3">
+								<div class="flex flex-col items-center gap-y-3">
+									<span class="ml-3" id="annual-billing-label">
+										<span class="text-sm font-medium text-gray-900">Booking For A Group? </span>
+									</span>
+									<!-- Enabled: "bg-indigo-600", Not Enabled: "bg-gray-200" -->
+									<button type="button" class="bg-gray-200 relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" role="switch" aria-checked="false" aria-labelledby="annual-billing-label">
+										<!-- Enabled: "translate-x-5", Not Enabled: "translate-x-0" -->
+										<span aria-hidden="true" class="translate-x-0 pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200"></span>
+									</button>
+								</div>
+	
+								<div class="flex flex-col items-center gap-y-3">
+									<span class="ml-3" id="annual-billing-label">
+										<span class="text-sm font-medium text-gray-900">Home/ Site Visitation? </span>
+									</span>
+									<!-- Enabled: "bg-indigo-600", Not Enabled: "bg-gray-200" -->
+									<button type="button" class="bg-gray-200 relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" role="switch" aria-checked="false" aria-labelledby="annual-billing-label">
+										<!-- Enabled: "translate-x-5", Not Enabled: "translate-x-0" -->
+										<span aria-hidden="true" class="translate-x-0 pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200"></span>
+									</button>
+								</div>
+							</div>
+							
+
 						</div>
 					</div>
 				</div>
