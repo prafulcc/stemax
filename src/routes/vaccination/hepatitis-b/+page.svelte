@@ -7,6 +7,12 @@
 
 <script>
 	let shown = false;
+
+	let name = "";
+	let email = "";
+	let phone = "";
+	let group = false;
+	let offsite = false;
 </script>
 
 <div class="py-16 xl:py-36 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
@@ -104,7 +110,7 @@
 								A link to book will be emailed to you and an SMS reminder will be sent 24 hours before your appointment.
 							</p>
 
-							<div class="relative my-6">
+							<div class="relative my-3 py-3">
 								<div class="absolute inset-0 flex items-center" aria-hidden="true">
 									<div class="w-full border-t border-gray-300"></div>
 								</div>
@@ -121,7 +127,7 @@
 											<path fill-rule="evenodd" d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" clip-rule="evenodd" />
 										</svg>
 									</div>
-									<input type="text" name="name" id="name" class="border py-3 focus:ring-emerald-500 focus:border-emerald-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md" placeholder="John Smith">
+									<input bind:value={name} type="text" name="name" id="name" class="border py-3 focus:ring-emerald-500 focus:border-emerald-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md" placeholder="John Smith">
 								</div>
 							</div>
 
@@ -133,7 +139,7 @@
 											<path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
 										</svg>
 									</div>
-									<input type="email" name="email" id="email" class="border py-3 focus:ring-emerald-500 focus:border-emerald-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md" placeholder="you@example.com">
+									<input bind:value={email} type="email" name="email" id="email" class="border py-3 focus:ring-emerald-500 focus:border-emerald-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md" placeholder="you@example.com">
 								</div>
 							</div>
 
@@ -144,7 +150,7 @@
 											<path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd" />
 										</svg>
 									</div>
-									<input type="tel" name="phone-number" id="phone-number" class="border py-3 focus:ring-emerald-500 focus:border-emerald-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md" placeholder="0759268860">
+									<input bind:value={phone} type="tel" name="phone-number" id="phone-number" class="border py-3 focus:ring-emerald-500 focus:border-emerald-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md" placeholder="0759268860">
 								</div>
 							</div>
 
@@ -154,10 +160,8 @@
 									<span class="ml-3" id="annual-billing-label">
 										<span class="text-sm font-medium text-gray-900">Booking For A Group? </span>
 									</span>
-									<!-- Enabled: "bg-indigo-600", Not Enabled: "bg-gray-200" -->
-									<button type="button" class="bg-gray-200 relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" role="switch" aria-checked="false" aria-labelledby="annual-billing-label">
-										<!-- Enabled: "translate-x-5", Not Enabled: "translate-x-0" -->
-										<span aria-hidden="true" class="translate-x-0 pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200"></span>
+									<button on:click={() =>  group = !group} type="button" class="{group ? 'bg-emerald-600' : 'bg-gray-200'} relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500" role="switch" aria-checked="false" aria-labelledby="annual-billing-label">
+										<span aria-hidden="true" class="{group ? 'translate-x-5': 'translate-x-0'} pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200"></span>
 									</button>
 								</div>
 	
@@ -165,10 +169,8 @@
 									<span class="ml-3" id="annual-billing-label">
 										<span class="text-sm font-medium text-gray-900">Home/ Site Visitation? </span>
 									</span>
-									<!-- Enabled: "bg-indigo-600", Not Enabled: "bg-gray-200" -->
-									<button type="button" class="bg-gray-200 relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" role="switch" aria-checked="false" aria-labelledby="annual-billing-label">
-										<!-- Enabled: "translate-x-5", Not Enabled: "translate-x-0" -->
-										<span aria-hidden="true" class="translate-x-0 pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200"></span>
+									<button on:click={() =>  offsite = !offsite} type="button" class="{offsite ? 'bg-emerald-600' : 'bg-gray-200'} relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500" role="switch" aria-checked="false" aria-labelledby="annual-billing-label">
+										<span aria-hidden="true" class="{offsite ? 'translate-x-5': 'translate-x-0'} pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200"></span>
 									</button>
 								</div>
 							</div>
@@ -179,7 +181,7 @@
 				</div>
 			</div>
 			<div class="bg-gray-100 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-				<button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-emerald-600 text-base font-medium text-white hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 sm:ml-3 sm:w-auto sm:text-sm">Submit</button>
+				<button on:click={() => console.log(name, email, phone, group, offsite)} type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-emerald-600 text-base font-medium text-white hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 sm:ml-3 sm:w-auto sm:text-sm">Submit</button>
 				<button on:click={() => shown = false } type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cancel</button>
 			</div>
 		</div>
